@@ -119,6 +119,24 @@
       text-decoration: none;
     }
     .button:hover { opacity: 0.88; }
+    .contact { display: grid; gap: 6px; }
+    .contact label { margin-top: 10px; font-size: 0.9rem; font-weight: 500; }
+    .contact input, .contact select, .contact textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--text);
+      font: inherit;
+    }
+    .contact input:focus, .contact select:focus, .contact textarea:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+    .contact .button { justify-self: center; margin-top: 20px; border: 0; cursor: pointer; font: inherit; font-weight: 700; }
+    .req { margin-left: 4px; font-size: 0.75rem; color: #d1242f; }
+    .honey { display: none; }
     footer {
       margin-top: 32px;
       text-align: center;
@@ -183,6 +201,34 @@
     <section class="cta">
       <p>「こんなことはできる？」という段階でも、お気軽にご相談ください。</p>
       <a class="button" href="https://agilestrategy-lab.com/portfolio">制作実績を見る</a>
+    </section>
+
+    <section id="contact">
+      <h2>お問い合わせ</h2>
+      <form class="contact" action="https://formsubmit.co/dad14183bb02f8c3357924480fa64fbc" method="POST">
+        <input type="hidden" name="_subject" value="【紹介ページ】お問い合わせ">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://hagihara-profile.vercel.app/thanks.html">
+        <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off">
+
+        <label for="name">お名前 <span class="req">必須</span></label>
+        <input id="name" type="text" name="name" required autocomplete="name">
+
+        <label for="email">メールアドレス <span class="req">必須</span></label>
+        <input id="email" type="email" name="email" required autocomplete="email">
+
+        <label for="type">ご相談の種類</label>
+        <select id="type" name="type">
+          <option>Webサイト制作</option>
+          <option>業務効率化ツールの開発</option>
+          <option>その他</option>
+        </select>
+
+        <label for="message">ご相談内容 <span class="req">必須</span></label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button class="button" type="submit">送信する</button>
+      </form>
     </section>
 
     <footer>&copy; 2026 萩原 健治</footer>
